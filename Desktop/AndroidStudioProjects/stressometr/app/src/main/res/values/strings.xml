@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">stressometr</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="newscreen">Это другой экран</string>
+    <string name="myfirst_string">TEEESSST</string>
+</resources>
