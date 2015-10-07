@@ -1,16 +1,21 @@
 package com.sesedgy.stressometr;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mylayout);
+        setContentView(R.layout.main);
     }
 
     @Override
@@ -33,5 +38,21 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void initToolbar(){
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.app_name);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener(){
+                                               @Override
+                                               public boolean onMenuItemClick(MenuItem item) {
+                                                   return false;
+                                               }
+                                           }
+        );
+
+        toolbar.inflateMenu(R.menu.menu_main);
+
     }
 }
