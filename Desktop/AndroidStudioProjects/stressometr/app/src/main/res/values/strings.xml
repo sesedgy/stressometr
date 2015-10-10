@@ -1,8 +1,18 @@
 <resources>
-    <string name="app_name">stressometr</string>
+    <string name="app_name">stressoMetr</string>
+    <string name="action_settings">stressoMetr</string>
+
+
+    <string name="reportBtn">Отчеты</string>
+    <string name="settingsBtn">Настройки</string>
+    <string name="helpBtn">Поддержка</string>
+    <string name="vidBtn">Виджет</string>
+    <string name="myfirst_string">TEEESSST</string>
+    <string name="strOfDay"></string>
+    <string name="title_activity_widget">ТЕСТ ВИДЖЕТА</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="newscreen">Это другой экран</string>
-    <string name="myfirst_string">TEEESSST</string>
+    <string name="title_activity_settings">Настройки</string>
+    <string name="title_activity_report">Отчеты</string>
+    <string name="title_activity_help">Поддержка</string>
 </resources>

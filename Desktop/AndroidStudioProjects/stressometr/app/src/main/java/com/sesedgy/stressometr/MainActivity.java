@@ -1,22 +1,66 @@
 package com.sesedgy.stressometr;
 
-import android.annotation.TargetApi;
-import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar toolbar;
+    public int strOfDay = 0; //СТРЕСС За день
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        Button reportBtn = (Button) findViewById(R.id.report);
+        Button settingsBtn = (Button) findViewById(R.id.settings);
+        Button helpBtn = (Button) findViewById(R.id.help);
+        Button vidBtn = (Button) findViewById(R.id.vidget);
+
+
+
+        reportBtn.setOnClickListener(this);
+        settingsBtn.setOnClickListener(this);
+        helpBtn.setOnClickListener(this);
+        vidBtn.setOnClickListener(this);
+
     }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.report:
+                Intent reportIntent = new Intent(this, ReportActivity.class);
+                startActivity(reportIntent);
+                break;
+
+            case R.id.settings:
+                Intent settingsIntent = new Intent(this, SettingsActivity.class);
+                startActivity(settingsIntent);
+                break;
+
+            case R.id.help:
+                Intent helpIntent = new Intent(this, HelpActivity.class);
+                startActivity(helpIntent);
+                break;
+            case R.id.vidget:
+                Intent vidgetIntent = new Intent(this, WidgetActivity.class);
+                startActivity(vidgetIntent);
+                break;
+
+        }
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -40,19 +84,5 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    private void initToolbar(){
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.app_name);
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener(){
-                                               @Override
-                                               public boolean onMenuItemClick(MenuItem item) {
-                                                   return false;
-                                               }
-                                           }
-        );
 
-        toolbar.inflateMenu(R.menu.menu_main);
-
-    }
 }
