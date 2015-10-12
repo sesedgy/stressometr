@@ -1,6 +1,8 @@
 package com.sesedgy.stressometr;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -11,6 +13,7 @@ import android.widget.Toolbar;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
 
     private Toolbar toolbar;
     public int strOfDay = 0; //СТРЕСС За день
@@ -82,6 +85,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void initToolbar() {
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.app_name);
     }
 
 

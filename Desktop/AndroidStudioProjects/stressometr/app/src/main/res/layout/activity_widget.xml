@@ -6,7 +6,21 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.sesedgy.stressometr.WidgetActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="!!!!!"
+        android:id="@+id/strBut"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/show"
+        android:layout_below="@+id/strBut"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp" />
 </RelativeLayout>
