@@ -3,12 +3,16 @@ package com.sesedgy.stressometr;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
+import android.widget.Button;
 import android.widget.RemoteViews;
+import android.widget.TextView;
 
 /**
  * Implementation of App Widget functionality.
  */
 public class Widget extends AppWidgetProvider {
+
+
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -16,7 +20,10 @@ public class Widget extends AppWidgetProvider {
         final int N = appWidgetIds.length;
         for (int i = 0; i < N; i++) {
             updateAppWidget(context, appWidgetManager, appWidgetIds[i]);
+
         }
+
+
     }
 
 
@@ -40,6 +47,7 @@ public class Widget extends AppWidgetProvider {
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
+
     }
 }
 

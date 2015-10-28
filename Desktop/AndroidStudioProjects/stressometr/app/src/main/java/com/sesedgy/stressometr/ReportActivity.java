@@ -1,16 +1,35 @@
 package com.sesedgy.stressometr;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.net.wifi.p2p.WifiP2pManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
-public class ReportActivity extends AppCompatActivity {
+
+public class ReportActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
+
+        Button Alltime = (Button) findViewById(R.id.forAllTime);
+        Button forYear = (Button) findViewById(R.id.forYear);
+        Button forMounth = (Button) findViewById(R.id.forMounth);
+        Button dayOfWeek = (Button) findViewById(R.id.dayOfWeek);
+
+
+        Alltime.setOnClickListener(this);
+        forYear.setOnClickListener(this);
+        forMounth.setOnClickListener(this);
+        dayOfWeek.setOnClickListener(this);
+
     }
 
     @Override
@@ -33,5 +52,25 @@ public class ReportActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent allTime = new Intent(this, Graphic.class);
+        switch (v.getId()){
+            case R.id.forAllTime:
+                allTime.putExtra("value", "a");
+                break;
+            case R.id.forYear:
+                allTime.putExtra("value", "b");
+                break;
+            case  R.id.forMounth:
+                allTime.putExtra("value", "c");
+                break;
+            case R.id.dayOfWeek:
+                allTime.putExtra("value", "d");
+        }
+        startActivity(allTime);
+
     }
 }

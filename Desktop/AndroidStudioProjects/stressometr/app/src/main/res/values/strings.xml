@@ -18,5 +18,7 @@
     <string name="appwidget_text"> </string>
     <string name="add_widget">Add widget</string>
     <string name="widget_name">stressoMetr</string>
+    <string name="TAG">myLOG</string>
+    <string name="title_activity_graphic">Graphic</string>
 
 </resources>

@@ -87,11 +87,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    private void initToolbar() {
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.app_name);
-    }
+//    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+//    private void initToolbar() {
+//        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+//        toolbar.setTitle(R.string.app_name);
+//    }
 
 
 }
